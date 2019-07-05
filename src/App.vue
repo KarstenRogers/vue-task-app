@@ -15,6 +15,21 @@ export default {
   components: {
     TaskList,
     TaskInput
+  },
+  data() {
+    return {
+      tasks: []
+    }
+  },
+  mounted() {
+    if (localStorage.getItem("tasks"))
+      this.tasks = JSON.parse(localStorage.getItem("tasks"));
+  },
+  methods: {
+    addTask(task) {
+      this.tasks.push(task);
+      localStorage.setItem("tasks", JSON.stringify(this.tasks));
+    }
   }
 }
 </script>
