@@ -1,7 +1,8 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
+    <h1>Task List</h1>
+    <TaskInput @addTask="addTask"/>
     <TaskList/>
-    <TaskInput/>
   </div>
 </template>
 
@@ -18,6 +19,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+  .container {
+    max-width: 600px;
+  }
 </style>
